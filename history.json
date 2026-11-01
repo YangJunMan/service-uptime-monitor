@@ -2,43 +2,43 @@
   "포트폴리오 & 기술 블로그": {
     "is_up": true,
     "status": 200,
-    "latency_ms": 387,
+    "latency_ms": 492,
     "fail_count": 0,
-    "last_check": "2026-11-02 03:25:56 KST"
+    "last_check": "2026-11-02 07:17:10 KST"
   },
   "양준혁의 실험실 (Lab Portal)": {
     "is_up": true,
     "status": 200,
-    "latency_ms": 338,
+    "latency_ms": 299,
     "fail_count": 0,
-    "last_check": "2026-11-02 03:25:56 KST"
+    "last_check": "2026-11-02 07:17:10 KST"
   },
   "회의록 만들기 (홈서버 AI 음성 전사·요약)": {
     "is_up": true,
     "status": 200,
-    "latency_ms": 639,
+    "latency_ms": 784,
     "fail_count": 0,
-    "last_check": "2026-11-02 03:25:56 KST"
+    "last_check": "2026-11-02 07:17:10 KST"
   },
   "Windows Server AD 랩 (권한 격리 실습 포털)": {
     "is_up": true,
     "status": 200,
-    "latency_ms": 643,
+    "latency_ms": 697,
     "fail_count": 0,
-    "last_check": "2026-11-02 03:25:56 KST"
+    "last_check": "2026-11-02 07:17:10 KST"
   },
   "Token Savings Benchmark (대시보드)": {
     "is_up": true,
     "status": 200,
-    "latency_ms": 142,
+    "latency_ms": 209,
     "fail_count": 0,
-    "last_check": "2026-11-02 03:25:56 KST"
+    "last_check": "2026-11-02 07:17:10 KST"
   },
   "내 집 찾기 (Search Auction 경매 지도 검색)": {
     "is_up": true,
     "status": 200,
-    "latency_ms": 255,
+    "latency_ms": 281,
     "fail_count": 0,
-    "last_check": "2026-11-02 03:25:56 KST"
+    "last_check": "2026-11-02 07:17:10 KST"
   }
 }
