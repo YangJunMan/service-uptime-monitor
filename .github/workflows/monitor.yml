@@ -1,0 +1,36 @@
+name: Service Health & Uptime Monitor
+
+on:
+  schedule:
+    # 5분마다 자동 실행
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  check-and-alert:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run Health Checks & Generate Status
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python monitor.py
+
+      - name: Commit and Push Status Updates
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action [Uptime Bot]"
+          git add README.md history.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore(monitor): update live status board [skip ci]" && git push)
