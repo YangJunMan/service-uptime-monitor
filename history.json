@@ -1,0 +1,44 @@
+{
+  "포트폴리오 & 기술 블로그": {
+    "is_up": true,
+    "status": 200,
+    "latency_ms": 387,
+    "fail_count": 0,
+    "last_check": "2026-11-02 03:25:56 KST"
+  },
+  "양준혁의 실험실 (Lab Portal)": {
+    "is_up": true,
+    "status": 200,
+    "latency_ms": 338,
+    "fail_count": 0,
+    "last_check": "2026-11-02 03:25:56 KST"
+  },
+  "회의록 만들기 (홈서버 AI 음성 전사·요약)": {
+    "is_up": true,
+    "status": 200,
+    "latency_ms": 639,
+    "fail_count": 0,
+    "last_check": "2026-11-02 03:25:56 KST"
+  },
+  "Windows Server AD 랩 (권한 격리 실습 포털)": {
+    "is_up": true,
+    "status": 200,
+    "latency_ms": 643,
+    "fail_count": 0,
+    "last_check": "2026-11-02 03:25:56 KST"
+  },
+  "Token Savings Benchmark (대시보드)": {
+    "is_up": true,
+    "status": 200,
+    "latency_ms": 142,
+    "fail_count": 0,
+    "last_check": "2026-11-02 03:25:56 KST"
+  },
+  "내 집 찾기 (Search Auction 경매 지도 검색)": {
+    "is_up": true,
+    "status": 200,
+    "latency_ms": 255,
+    "fail_count": 0,
+    "last_check": "2026-11-02 03:25:56 KST"
+  }
+}
