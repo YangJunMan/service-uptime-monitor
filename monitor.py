@@ -113,7 +113,7 @@ def handle_alerts(results, history):
             # 5분 이상 다운 시 (연속 1회 이상 실패 시) GitHub Issue 알림 생성
             if fail_count == 1:
                 title = f"[CRITICAL] Service Outage Detected: {name}"
-                body = f"""### 🚨 서비스 장애 감지 알림
+                body = f"""### 서비스 장애 감지 알림
 
 - **서비스명**: {name}
 - **URL**: {res['url']}
@@ -142,7 +142,14 @@ def handle_alerts(results, history):
                     pass
             fail_count = 0
 
+        samples = list(prev_data.get("samples", []))
+        if not samples and "last_check" in prev_data:
+            samples.append({key: prev_data.get(key) for key in ("is_up", "status", "latency_ms", "last_check")})
+        samples.append({"is_up": is_up, "status": res["status"], "latency_ms": res["latency_ms"], "last_check": now_kst})
         history[name] = {
+            "url": res["url"],
+            "category": res["category"],
+            "samples": samples[-288:],
             "is_up": is_up,
             "status": res["status"],
             "latency_ms": res["latency_ms"],
@@ -153,61 +160,40 @@ def handle_alerts(results, history):
     return history
 
 def generate_readme(results, history):
-    kst = timezone(timedelta(hours=9))
-    now_kst = datetime.now(kst).strftime("%Y-%m-%d %H:%M:%S KST")
-
-    all_up = all(res["is_up"] for res in results)
-    status_badge = "https://img.shields.io/badge/Status-All%20Systems%20Operational-brightgreen?style=for-the-badge&logo=statuspage" if all_up else "https://img.shields.io/badge/Status-Partial%20Outage-critical?style=for-the-badge&logo=statuspage"
-
+    last_check = next((history.get(res["name"], {}).get("last_check") for res in results
+                       if history.get(res["name"], {}).get("last_check")), "확인되지 않음")
     rows = []
     for res in results:
-        status_icon = "🟢 정상 (UP)" if res["is_up"] else "🔴 장애 (DOWN)"
-        code_badge = f"`{res['status']}`"
-        latency = f"{res['latency_ms']} ms"
-        rows.append(f"| **{res['name']}** | [{res['url']}]({res['url']}) | {status_icon} | {code_badge} | {latency} |")
+        status = "정상" if res["is_up"] else "장애"
+        rows.append(f"| **{res['name']}** | [{res['url']}]({res['url']}) | {status} | `{res['status']}` | {res['latency_ms']} ms |")
 
-    readme_content = f"""# 🛡️ Service Uptime & Health Monitor
+    readme_content = f"""# 서비스 가동 상태 모니터
 
-> 엔지니어 양준혁의 블로그, 라이브 실험실, 홈서버(jammy-sub) 및 웹 서비스들의 가동 상태를 **5분 주기로 실시간 감시**하는 자동화 모니터링 시스템입니다.
-> 장애 발생 시 5분 이내에 GitHub Issues 및 알림 파이프라인으로 즉시 통보됩니다.
+## [실시간 대시보드 열기](https://yangjunman.github.io/service-uptime-monitor/)
 
-<p align="center">
-  <img src="{status_badge}" alt="System Status Badge">
-  <br>
-  <sub>마지막 자동 점검 시각: <b>{now_kst}</b> · 5분 주기 크론(GitHub Actions)</sub>
-</p>
+서비스 가동 상태와 방문자 브라우저에서 측정한 핑, 홈서버 `jammy-sub`의 CPU, RAM, VRAM 사용량을 확인할 수 있습니다.
 
----
+## 서비스 가동 현황
 
-## 📊 실시간 서비스 가동 현황 (Live Status Board)
+마지막 자동 점검: {last_check} · GitHub Actions에서 5분마다 점검
 
-| 서비스명 | 대상 엔드포인트 | 가동 상태 | 응답 코드 | 응답 속도 |
+| 서비스명 | 대상 주소 | 상태 | HTTP 상태 | 응답 시간 |
 | :--- | :--- | :---: | :---: | :---: |
 {chr(10).join(rows)}
 
----
+## 모니터링 방식
 
-## ⚙️ 모니터링 시스템 아키텍처
+- GitHub Actions가 서비스에 HTTP 요청을 보내 상태와 응답 시간을 기록합니다.
+- 최초 장애 감지와 복구 시 GitHub Issue 생성을 시도합니다.
+- `history.json`에는 서비스별 최근 점검 결과를 최대 288개 저장합니다. 기존 기록은 누적되기 시작한 시점부터 확인할 수 있습니다.
+- 브라우저 핑은 방문자의 네트워크에서 측정하며, 자동 점검 결과와 다를 수 있습니다.
 
-- **주기 점검**: GitHub Actions Cron 워크플로우를 통해 매 5분(`*/5 * * * *`)마다 전 엔드포인트 HTTP/HTTPS 헬스체크 실행.
-- **감시 항목**:
-  - 홈서버(jammy-sub) 상시 구동 서비스: 회의록 자동화 파이프라인(`lab.yangjunman.com/minutes/`), Windows Server AD 랩(`lab.yangjunman.com/winlab/`)
-  - 프로덕션 플랫폼: 기술 블로그 & 이력서(`yangjunman.com`)
-  - 서버리스 웹 서비스: 내 집 찾기(`yangjunman-auction.vercel.app`)
-  - 벤치마크 대시보드: TokenBench(`yangjunman.github.io/claude-code-token-savings-benchmark`)
-- **장애 알림(Alerting)**:
-  - 5분 이상 다운(연속 1회 이상 응답 실패 또는 4xx/5xx 에러) 발생 시 자동으로 `incident` 라벨의 GitHub Issue 발행.
-  - 서비스 복구 감지 시 복구 완료 로그 및 이슈 자동 종료.
-- **상태 투명성**: 매 실행마다 `README.md` 및 `history.json`을 자동 갱신하여 100% 투명한 가동률 기록 유지.
+## 바로가기
 
----
-
-### 🔗 바로가기
-- 📄 [엔지니어 양준혁 이력서](https://www.yangjunman.com/resume)
-- 🧪 [양준혁의 실험실](https://www.yangjunman.com/lab)
-- 📚 [기술 블로그](https://www.yangjunman.com/blog)
+- [이력서](https://www.yangjunman.com/resume)
+- [실험실](https://www.yangjunman.com/lab)
+- [기술 블로그](https://www.yangjunman.com/blog)
 """
-
     with open("README.md", "w", encoding="utf-8") as f:
         f.write(readme_content)
     print("Generated README.md successfully!")
