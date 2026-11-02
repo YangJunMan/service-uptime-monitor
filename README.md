@@ -6,7 +6,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Status-All%20Systems%20Operational-brightgreen?style=for-the-badge&logo=statuspage" alt="System Status Badge">
   <br>
-  <sub>마지막 자동 점검 시각: <b>2026-11-02 07:17:10 KST</b> · 5분 주기 크론(GitHub Actions)</sub>
+  <sub>마지막 자동 점검 시각: <b>2026-11-02 10:36:40 KST</b> · 5분 주기 크론(GitHub Actions)</sub>
 </p>
 
 ---
@@ -15,12 +15,12 @@
 
 | 서비스명 | 대상 엔드포인트 | 가동 상태 | 응답 코드 | 응답 속도 |
 | :--- | :--- | :---: | :---: | :---: |
-| **포트폴리오 & 기술 블로그** | [https://www.yangjunman.com](https://www.yangjunman.com) | 🟢 정상 (UP) | `200` | 492 ms |
-| **양준혁의 실험실 (Lab Portal)** | [https://www.yangjunman.com/lab](https://www.yangjunman.com/lab) | 🟢 정상 (UP) | `200` | 299 ms |
-| **회의록 만들기 (홈서버 AI 음성 전사·요약)** | [https://lab.yangjunman.com/minutes/](https://lab.yangjunman.com/minutes/) | 🟢 정상 (UP) | `200` | 784 ms |
-| **Windows Server AD 랩 (권한 격리 실습 포털)** | [https://lab.yangjunman.com/winlab/](https://lab.yangjunman.com/winlab/) | 🟢 정상 (UP) | `200` | 697 ms |
-| **Token Savings Benchmark (대시보드)** | [https://yangjunman.github.io/claude-code-token-savings-benchmark/web/#overview](https://yangjunman.github.io/claude-code-token-savings-benchmark/web/#overview) | 🟢 정상 (UP) | `200` | 209 ms |
-| **내 집 찾기 (Search Auction 경매 지도 검색)** | [https://yangjunman-auction.vercel.app/](https://yangjunman-auction.vercel.app/) | 🟢 정상 (UP) | `200` | 281 ms |
+| **포트폴리오 & 기술 블로그** | [https://www.yangjunman.com](https://www.yangjunman.com) | 🟢 정상 (UP) | `200` | 374 ms |
+| **양준혁의 실험실 (Lab Portal)** | [https://www.yangjunman.com/lab](https://www.yangjunman.com/lab) | 🟢 정상 (UP) | `200` | 230 ms |
+| **회의록 만들기 (홈서버 AI 음성 전사·요약)** | [https://lab.yangjunman.com/minutes/](https://lab.yangjunman.com/minutes/) | 🟢 정상 (UP) | `200` | 612 ms |
+| **Windows Server AD 랩 (권한 격리 실습 포털)** | [https://lab.yangjunman.com/winlab/](https://lab.yangjunman.com/winlab/) | 🟢 정상 (UP) | `200` | 520 ms |
+| **Token Savings Benchmark (대시보드)** | [https://yangjunman.github.io/claude-code-token-savings-benchmark/web/#overview](https://yangjunman.github.io/claude-code-token-savings-benchmark/web/#overview) | 🟢 정상 (UP) | `200` | 184 ms |
+| **내 집 찾기 (Search Auction 경매 지도 검색)** | [https://yangjunman-auction.vercel.app/](https://yangjunman-auction.vercel.app/) | 🟢 정상 (UP) | `200` | 103 ms |
 
 ---
 
