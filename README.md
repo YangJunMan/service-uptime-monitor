@@ -6,16 +6,16 @@
 
 ## 서비스 가동 현황
 
-마지막 자동 점검: 2026-11-03 17:09:36 KST · GitHub Actions에서 5분마다 점검
+마지막 자동 점검: 2026-11-04 01:17:21 KST · GitHub Actions에서 5분마다 점검
 
 | 서비스명 | 대상 주소 | 상태 | HTTP 상태 | 응답 시간 |
 | :--- | :--- | :---: | :---: | :---: |
-| **포트폴리오 & 기술 블로그** | [https://www.yangjunman.com](https://www.yangjunman.com) | 정상 | `200` | 191 ms |
-| **양준혁의 실험실 (Lab Portal)** | [https://www.yangjunman.com/lab](https://www.yangjunman.com/lab) | 정상 | `200` | 199 ms |
-| **회의록 만들기 (홈서버 AI 음성 전사·요약)** | [https://lab.yangjunman.com/minutes/](https://lab.yangjunman.com/minutes/) | 정상 | `200` | 660 ms |
-| **Windows Server AD 랩 (권한 격리 실습 포털)** | [https://lab.yangjunman.com/winlab/](https://lab.yangjunman.com/winlab/) | 정상 | `200` | 238 ms |
-| **Token Savings Benchmark (대시보드)** | [https://yangjunman.github.io/claude-code-token-savings-benchmark/web/#overview](https://yangjunman.github.io/claude-code-token-savings-benchmark/web/#overview) | 정상 | `200` | 166 ms |
-| **내 집 찾기 (Search Auction 경매 지도 검색)** | [https://yangjunman-auction.vercel.app/](https://yangjunman-auction.vercel.app/) | 정상 | `200` | 358 ms |
+| **포트폴리오 & 기술 블로그** | [https://www.yangjunman.com](https://www.yangjunman.com) | 정상 | `200` | 462 ms |
+| **양준혁의 실험실 (Lab Portal)** | [https://www.yangjunman.com/lab](https://www.yangjunman.com/lab) | 정상 | `200` | 378 ms |
+| **회의록 만들기 (홈서버 AI 음성 전사·요약)** | [https://lab.yangjunman.com/minutes/](https://lab.yangjunman.com/minutes/) | 정상 | `200` | 670 ms |
+| **Windows Server AD 랩 (권한 격리 실습 포털)** | [https://lab.yangjunman.com/winlab/](https://lab.yangjunman.com/winlab/) | 정상 | `200` | 646 ms |
+| **Token Savings Benchmark (대시보드)** | [https://yangjunman.github.io/claude-code-token-savings-benchmark/web/#overview](https://yangjunman.github.io/claude-code-token-savings-benchmark/web/#overview) | 정상 | `200` | 312 ms |
+| **내 집 찾기 (Search Auction 경매 지도 검색)** | [https://yangjunman-auction.vercel.app/](https://yangjunman-auction.vercel.app/) | 정상 | `200` | 264 ms |
 
 ## 모니터링 방식
 
