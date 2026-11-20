@@ -422,13 +422,19 @@
         "status": 200,
         "latency_ms": 365,
         "last_check": "2026-11-20 18:56:27 KST"
+      },
+      {
+        "is_up": true,
+        "status": 200,
+        "latency_ms": 284,
+        "last_check": "2026-11-21 03:30:33 KST"
       }
     ],
     "is_up": true,
     "status": 200,
-    "latency_ms": 365,
+    "latency_ms": 284,
     "fail_count": 0,
-    "last_check": "2026-11-20 18:56:27 KST"
+    "last_check": "2026-11-21 03:30:33 KST"
   },
   "양준혁의 실험실 (Lab Portal)": {
     "url": "https://www.yangjunman.com/lab",
@@ -853,13 +859,19 @@
         "status": 200,
         "latency_ms": 291,
         "last_check": "2026-11-20 18:56:27 KST"
+      },
+      {
+        "is_up": true,
+        "status": 200,
+        "latency_ms": 278,
+        "last_check": "2026-11-21 03:30:33 KST"
       }
     ],
     "is_up": true,
     "status": 200,
-    "latency_ms": 291,
+    "latency_ms": 278,
     "fail_count": 0,
-    "last_check": "2026-11-20 18:56:27 KST"
+    "last_check": "2026-11-21 03:30:33 KST"
   },
   "회의록 만들기 (홈서버 AI 음성 전사·요약)": {
     "url": "https://lab.yangjunman.com/minutes/",
@@ -1284,13 +1296,19 @@
         "status": 200,
         "latency_ms": 705,
         "last_check": "2026-11-20 18:56:27 KST"
+      },
+      {
+        "is_up": true,
+        "status": 200,
+        "latency_ms": 595,
+        "last_check": "2026-11-21 03:30:33 KST"
       }
     ],
     "is_up": true,
     "status": 200,
-    "latency_ms": 705,
+    "latency_ms": 595,
     "fail_count": 0,
-    "last_check": "2026-11-20 18:56:27 KST"
+    "last_check": "2026-11-21 03:30:33 KST"
   },
   "Windows Server AD 랩 (권한 격리 실습 포털)": {
     "url": "https://lab.yangjunman.com/winlab/",
@@ -1715,13 +1733,19 @@
         "status": 200,
         "latency_ms": 652,
         "last_check": "2026-11-20 18:56:27 KST"
+      },
+      {
+        "is_up": true,
+        "status": 200,
+        "latency_ms": 696,
+        "last_check": "2026-11-21 03:30:33 KST"
       }
     ],
     "is_up": true,
     "status": 200,
-    "latency_ms": 652,
+    "latency_ms": 696,
     "fail_count": 0,
-    "last_check": "2026-11-20 18:56:27 KST"
+    "last_check": "2026-11-21 03:30:33 KST"
   },
   "Token Savings Benchmark (대시보드)": {
     "url": "https://yangjunman.github.io/claude-code-token-savings-benchmark/web/#overview",
@@ -2146,13 +2170,19 @@
         "status": 200,
         "latency_ms": 144,
         "last_check": "2026-11-20 18:56:27 KST"
+      },
+      {
+        "is_up": true,
+        "status": 200,
+        "latency_ms": 124,
+        "last_check": "2026-11-21 03:30:33 KST"
       }
     ],
     "is_up": true,
     "status": 200,
-    "latency_ms": 144,
+    "latency_ms": 124,
     "fail_count": 0,
-    "last_check": "2026-11-20 18:56:27 KST"
+    "last_check": "2026-11-21 03:30:33 KST"
   },
   "내 집 찾기 (Search Auction 경매 지도 검색)": {
     "url": "https://yangjunman-auction.vercel.app/",
@@ -2577,12 +2607,18 @@
         "status": 200,
         "latency_ms": 143,
         "last_check": "2026-11-20 18:56:27 KST"
+      },
+      {
+        "is_up": true,
+        "status": 200,
+        "latency_ms": 196,
+        "last_check": "2026-11-21 03:30:33 KST"
       }
     ],
     "is_up": true,
     "status": 200,
-    "latency_ms": 143,
+    "latency_ms": 196,
     "fail_count": 0,
-    "last_check": "2026-11-20 18:56:27 KST"
+    "last_check": "2026-11-21 03:30:33 KST"
   }
 }
